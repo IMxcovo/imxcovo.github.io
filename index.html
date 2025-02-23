@@ -382,9 +382,30 @@
                     filter: grayscale(100%) blur(3px) invert(1) hue-rotate(180deg);
                 }
             }
-
+            
             .CancelBlur_Reverse {
                 animation: 1s CancelBlur_Reverse
+            }
+            @Opacity_Reverse{
+                0% {
+                    opacity: 100%;
+                }
+                25% {
+                    opacity: 75%;
+                }
+                50%{
+                    opacity: 25%;
+                }
+                70%{
+                    opacity: 0%;
+                }
+                100% {
+                    opacity: 100%;
+                }
+                
+            }
+            .Opacity{
+                animation: 3s Opacity_Reverse
             }
         </style>
         <title>电子灵堂异常：你可能没有加载 JavaScript。</title>
@@ -451,6 +472,7 @@
                 <h3 id="Gongpin">给 [] 送上贡品</h3>
                 <div class="btn-group" role="group" aria-label="...">
                     <button type="button" class="btn btn-default" id="UpStream">上升气流</button>
+                    <button type="button" class="btn btn-default" id="Opacity">无人问津（变小透明）</button>
                     <button type="button" class="btn btn-default" id="HideCloth">隐藏遮羞布</button>
                     <button type="button" class="btn btn-default" id="BiggerMamma">胸部变大（窄的屏幕效果不好）</button>
                     <button type="button" class="btn btn-default" id="OpenChampagne">开香槟🍾（手机版看不到的往右划）</button>
@@ -538,6 +560,10 @@
             document.getElementById("BiggerMamma").onclick = function () {
                 $('#Dead_Picture').addClass("Bigger");
                 setTimeout(function () { $('#Dead_Picture').removeClass('Bigger') }, 2000);
+            };
+            document.getElementById("Opacity").onclick = function () {
+                $('#Dead_Picture').addClass("Opacity");
+                setTimeout(function () { $('#Dead_Picture').removeClass('Opacity') }, 3000);
             };
             document.getElementById("Scare").onclick = function () {
                 $('#Dead_Picture').addClass("Scare");
